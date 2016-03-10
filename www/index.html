@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />-->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        
+        <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-validator/css/bootstrapValidator.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/plugins/owl-carousel/owl.carousel.css" />
+        <link rel="stylesheet" type="text/css" href="assets/plugins/owl-carousel/owl.theme.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/custom.css" />
+        
+        <title>Vivendo</title>
+        
+        <script type="text/javascript" src="assets/plugins/jquery/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery-number/jquery.number.js"></script>
+        
+        <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+        
+        <script type="text/javascript" src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+        
+        <script type="text/javascript" src="assets/plugins/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60841129-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    </head>
+    
+    <body>
+
+        <!--Splash-->
+        <div id="pg_splash" data-role="page" class="vivendo-page">
+            <div role="main" class="ui-content">
+                <div class="app">
+                    <img class="logo" src="assets/img/logo.png">
+                    <img class="copyright" src="assets/img/copyright.png">
+                </div>
+            </div>
+        </div>
+
+        <!--City List-->
+        <div id="pg_city" data-role="page" class="vivendo-page">
+            <div data-role="header" data-position="fixed" class="header" data-transition="none" data-tap-toggle="false">
+                <img class="logo" src="assets/img/header_logo.png">
+                
+                <div class="menu-group">
+                    <a href="#" class="left">&nbsp;</a>
+                    <a href="#" class="center">Seleccione ciudad</a>
+                    <a href="#" class="right">&nbsp;</a>
+                </div>
+            </div>
+            
+            <div role="main" class="ui-content">
+                <ul id="list_city" data-role="listview" class="list-content">
+                    <!--<li class="separator" data-have="0">
+                        <div class="row" style="padding-top: 16px;">
+                            <span>Próximamente</span>
+                        </div>
+                    </li>
+                    <li data-have="0">
+                        <div class="row ui-li-content disabled">
+                            <img class="img-circle photo" src="http://newvivendo.dayscript.com/sites/all/themes/at-vivendo/images/icons/medellin.png">
+                            <div class="ui-li-text">
+                                <span class="title">Medellín</span>
+                                <span class="desc"> - Antioquia</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-have="0">
+                        <div class="row ui-li-content disabled">
+                            <img class="img-circle photo" src="http://newvivendo.dayscript.com/sites/all/themes/at-vivendo/images/icons/eje_cafetero.png">
+                            <div class="ui-li-text">
+                                <span class="title">Eje Cafetero</span>
+                                <span class="desc"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-have="0">
+                        <div class="row ui-li-content disabled">
+                            <img class="img-circle photo" src="http://newvivendo.dayscript.com/sites/all/themes/at-vivendo/images/icons/costa.png">
+                            <div class="ui-li-text">
+                                <span class="title">Costa Atlántica</span>
+                                <span class="desc"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-have="0">
+                        <div class="row ui-li-content disabled">
+                            <img class="img-circle photo" src="http://newvivendo.dayscript.com/sites/all/themes/at-vivendo/images/icons/santanderes.png">
+                            <div class="ui-li-text">
+                                <span class="title">Santanderes</span>
+                                <span class="desc"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-have="0">
+                        <div class="row ui-li-content disabled">
+                            <img class="img-circle photo" src="http://vivendo.co/sites/all/themes/at-vivendo/images/icons/florida.png">
+                            <div class="ui-li-text">
+                                <span class="title">La Florida</span>
+                                <span class="desc"> - USA</span>
+                            </div>
+                        </div>
+                    </li>-->
+                </ul>
+                
+                <div data-role="popup" id="city_popup" class="">
+                    <div class="menu-group">
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding: 0; background: #ce042f;">
+                            <a href="#" class="zona">Buscar<br>por zona</a>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding: 0; background: #89878c;">
+                            <a href="#" class="construct">Buscar por<br>constructora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Zone List-->
+        <div id="pg_zone" data-role="page" class="vivendo-page">
+            <div data-role="header" data-position="fixed" class="header" data-transition="none" data-tap-toggle="false">
+                <img class="logo" src="assets/img/header_logo.png">
+                
+                <div class="menu-group">
+                    <a href="#" class="left">Atrás</a>
+                    <a href="#" class="center">Zona</a>
+                    <a href="#" class="right">&nbsp;</a>
+                </div>
+            </div>
+            
+            <div role="main" class="ui-content">
+                <ul id="list_zone" data-role="listview" class="list-content">
+                </ul>
+            </div>
+        </div>
+
+        <!--Construct List-->
+        <div id="pg_construct" data-role="page" class="vivendo-page">
+            <div data-role="header" data-position="fixed" class="header" data-transition="none" data-tap-toggle="false">
+                <img class="logo" src="assets/img/header_logo.png">
+                
+                <div class="menu-group">
+                    <a href="#" class="left">Atrás</a>
+                    <a href="#" class="center">Constructora</a>
+                    <a href="#" class="right">&nbsp;</a>
+                </div>
+            </div>
+            
+            <div role="main" class="ui-content">
+                <ul id="list_construct" data-role="listview" class="list-content">
+                </ul>
+            </div>
+        </div>
+
+        <!--Project List-->
+        <div id="pg_project" data-role="page" class="vivendo-page">
+            <div data-role="header" data-position="fixed" class="header" data-transition="none" data-tap-toggle="false">
+                <img class="logo" src="assets/img/header_logo.png">
+                
+                <div class="menu-group">
+                    <a href="#" class="left">Ciudad</a>
+                    <a href="#" class="center"></a>
+                    <a href="#" class="right">Filtros</a>
+                </div>
+            </div>
+            
+            <div role="main" class="ui-content">
+                <div data-role="tabs" class="ui-tab">
+                    <div data-role="navbar" class="ui-nav">
+                        <ul>
+                            <li><a href="#tab_map" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;">Mapa</a></li>
+                            <li><a href="#tab_list" style="border-top-right-radius: 10px; border-bottom-right-radius: 10px;">Proyectos</a></li>
+                        </ul>                    
+                    </div>
+                    
+                    <div id="tab_map" class="ui-content">
+                        <div id="map_container" class="row">
+                            <div id="map_project" class="gmap3">
+                            </div>
+                        </div>
+                        
+                        <div data-role="popup" id="map_popup" class="popup-dialog">
+                            <a href="#" data-rel="back" data-role="button" class="ui-btn-right" style="background: #fff; border-radius: 15px; padding: 2px 3px 4px 3px; box-shadow: 0px 0px 12px #ce042f;"><img src="assets/img/delete-black.png" alt=""></a>
+    	                    <ul id="list_map">
+		                    </ul>
+		                </div>
+                    </div>
+                  
+                    <div id="tab_list" class="ui-content">
+                        <ul id="list_project" data-role="listview" class="list-content">
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!--Search Page-->
+        <div id="pg_search" data-role="page" class="vivendo-page">
+            <div data-role="header" data-position="fixed" class="header" data-transition="none" data-tap-toggle="false">
+                <img class="logo" src="assets/img/header_logo.png" />
+                
+                <div class="menu-group">
+                    <a href="#" class="left">Atrás</a>
+                    <a href="#" class="center">Filtros</a>
+                    <a href="#" class="right">&nbsp;</a>
+                </div>
+            </div>
+            
+            <div role="main" class="ui-content">
+                <div class="row ui-li-content" style="display:none;">
+                  <form action="#" method="post">
+                    <input  type="text" name="txt_search" id="txt_search" value="" placeholder="Buscar" />
+                  </form>
+                </div>  
+                <ul id="list_search" data-role="listview" class="list-content">
+                    <li data-have="0" data-kind="city">
+                        <div class="row ui-li-content">
+                            <div class="ui-li-text">
+                                <h5>Ciudad</h5>
+                                <h6>Todos</h6>
+                            </div>
+                            <img class="detail" src="assets/img/detail.png" />
+                        </div>
+                    </li>
+                    <li data-have="0" data-kind="zone">
+                        <div class="row ui-li-content">
+                            <div class="ui-li-text">
+                                <h5>Zona</h5>
+                                <h6>Todos</h6>
+                            </div>
+                            <img class="detail" src="assets/img/detail.png" />
+                        </div>
+                    </li>
+                    <li data-have="0" data-kind="type">
+                        <div class="row ui-li-content">
+                            <div class="ui-li-text">
+                                <h5>Tipo de inmueble</h5>
+                                <h6>Todos</h6>
+                            </div>
+                            <img class="detail" src="assets/img/detail.png" />
+                        </div>
+                    </li>
+                    <li data-have="0" data-kind="construct">
+                        <div class="row ui-li-content">
+                            <div class="ui-li-text">
+                                <h5>Constructora</h5>
+                                <h6>Todos</h6>
+                            </div>
+                            <img class="detail" src="assets/img/detail.png" />
+                        </div>
+                    </li>
+                    <li data-have="0" data-kind="price">
+                        <div class="row ui-li-content">
+                            <div class="ui-li-text" style="width: 100% !important;">
+                                <h5 style="width: 35% !important;">Precio</h5>
+                                <h6 style="width: 65% !important;">Todos</h6>
+                            </div>
+                        </div>
+                        <div class="row ui-li-content" style="height: 60px !important;">
+                            <form action="#" method="post">
+                                <input type="range" name="slider_price" id="slider_price" data-highlight="true" min="0" max="0" value="0">
+                            </form>
+                        </div>
+                    </li>
+                    
+                    <li data-have="0" data-kind="button">
+                        <div class="row ui-li-content">
+                            <a href="#" class="ui-btn button">Buscar</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div data-role="popup" id="type_popup" class="popup-dialog">
+                  <a href="#" data-rel="back" data-role="button" class="ui-btn-right close-button" style="">&times;</a>
+                  <ul id="list_type">
+                  </ul>
+                  
+                </div>
+              
+            </div>
+        </div>
+        
+        <!--Project Detail-->        
+        <div id="pg_detail" data-role="page" class="vivendo-page">
+            <div data-role="header" class="header" data-transition="none" data-tap-toggle="true">
+                <img class="logo" src="assets/img/header_logo.png">
+                
+                <div class="menu-group">
+                    <a href="#" class="left">Atrás</a>
+                    <a href="#" class="center">Proyecto</a>
+                         <div id="ruta"></div>
+                   
+                </div>
+            </div>
+            
+            <div role="main" class="ui-content">
+                <ul id="list_detail" data-role="listview" class="list-content">
+                
+                
+
+ 
+        <li id="acordionstyle">
+      
+                                    <div class="row ui-li-data">
+                                      <h1 id="h1planta" style="display:none">PLANTA ARQUITECTÓNICA</h1>
+            
+                   <div class="panel-group" id="accordion">
+                                      </div>
+          </div>
+                                          </li>
+                                          
+                                          
+               
+           
+                
+                    <li data-have="0">
+                      
+                     
+                        <div class="row ui-li-form">
+                            <h1>CONSTRUCTORA</h1>
+                            <div class="row">
+                                <img class="logo" src="" alt="">
+                                <div class="ui-li-address">
+                                    <span class="desc">Cra</span>
+                               
+                                  <div id="telefonoios"> </div>
+                                      
+                                    
+                                    <!--<a href="#" class="ui-btn button-sm" style="width: 120px; margin-top: 8px;">LLAMAR</a>-->
+                                </div>
+                            </div>
+                            <div class="row" style="background: #f8f8f8; padding: 7px 20px; margin-bottom: 12px;">
+                                <form id="frm_info" class="form" action="#" method="post" role="form">
+                                    <div class="row form-group">
+                                        <label class="control-label" for="firstname">Nombre <sup>*</sup></label>
+                                        <input type="text" placeholder="" id="firstname" name="firstname" class="form-control" required maxlength="100" value="">
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="control-label" for="lastname">Apellidos <sup>*</sup></label>
+                                        <input type="text" placeholder="" id="lastname" name="lastname" class="form-control" required maxlength="100" value="">
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="control-label" for="email">Email <sup>*</sup></label>
+                                        <input type="email" placeholder="" id="email" name="email" class="form-control" required maxlength="100" value="">
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="control-label" for="phone">Teléfono </label>
+                                        <input type="text" placeholder="" id="phone" name="phone" class="form-control" maxlength="100" value="">
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="control-label" for="subject">País <sup>*</sup></label>
+                                        <input type="text" placeholder="" id="subject" name="subject" class="form-control" required maxlength="100" value="">
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="control-label" for="address">Ciudad <sup>*</sup></label>
+                                        <input type="text" placeholder="" id="address" name="address" class="form-control" required maxlength="100" value="">
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="control-label" for="comment">Comentarios <sup>*</sup></label>
+                                        <textarea id="comment" name="comment" class="form-control">Estoy interesado por favor contactarme</textarea>
+                                        <label class="control-label" style="font-style: italic;">* Campos obligatorios</label>
+                                    </div>
+                                    <div class="row form-group">
+                                        <input type="checkbox" id="agree" name="agree" class="form-control" required>
+                                        <label class="control-label" for="agree" style="background: none !important; font-style: italic; padding-left: 40px !important; word-break: break-all; border: none;">Acepto y autorizo de conformidad a la Ley <i style="color: #df0d2f; font-style: italic; display: block;">1581 de 2012</i></label>
+                                    </div>
+                                    <div class="row form-group" style="margin-top: 10px !important;">
+                                        <input type="hidden" name="project" id="project"/>
+                                        <input type="hidden" name="construct" id="construct" />
+                                        <button type="submit" class="button" style="width: 100%;">ENVIAR</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            
+                <div data-role="popup" id="alert_popup" class="popup-dialog">
+                    <h2></h2>
+                </div>
+              
+              <div data-role="popup" id="send_popup" class="popup-dialog">
+                <a href="#" data-rel="back" data-role="button" class="ui-btn-right close-button" style="">&times;</a>
+                <span class="message">Su solicitud ha sido enviada</span> 
+              </div>
+              
+            </div>
+        </div>
+        
+
+        <script type="text/javascript" src="components/loader.js"></script>
+ 
+ <script type="text/javascript" src="assets/js/index.js"></script>
+    </body>
+</html>

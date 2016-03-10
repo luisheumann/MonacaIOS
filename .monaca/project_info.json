@@ -1,0 +1,23 @@
+{
+    "plugins": [
+        "mobi.monaca.plugins.Monaca",
+        "org.apache.cordova.splashscreen",
+        "org.apache.cordova.globalization",
+        "mobi.monaca.plugins.Share",
+        "mobi.monaca.plugins.WebIntent",
+        "mobi.monaca.plugins.MonacaBackend"
+    ],
+    "framework_version": "3.5",
+    "xcode_version": "6",
+    "cordova_version": "4.1",
+    "plugin_settings": [],
+    "title-ja": "",
+    "title-en": "",
+    "description-ja": "",
+    "description-en": "",
+    "category": "User Template",
+    "platform": [
+        "ios"
+    ],
+    "name": "generated-1448413397-56268bd77e2193a672254964"
+}
